@@ -1,0 +1,134 @@
+SQL> select * from station;
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       111 Delhi                                                      1130      
+         3      12711 11-DEC-21                                                 
+                                                                                
+       222 Mysore                                                     2130      
+         5      12704 13-DEC-21                                                 
+                                                                                
+       333 Mumbai                                                      730      
+         4      12390 12-DEC-21                                                 
+                                                                                
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       444 Chennai                                                     905      
+         5      12621 13-DEC-21                                                 
+                                                                                
+       555 Ahmedabad                                                  1830      
+         5      12210 14-DEC-21                                                 
+                                                                                
+       555 Ahmedabad                                                  1530      
+        10      12711 11-DEC-21                                                 
+                                                                                
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       444 Chennai                                                     600      
+                12711 12-DEC-21                                                 
+                                                                                
+       444 Chennai                                                     930      
+                12704 14-DEC-21                                                 
+                                                                                
+       555 Ahmedabad                                                  2200      
+                12390 12-DEC-21                                                 
+                                                                                
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       222 Mysore                                                     1330      
+        20      12621 12-DEC-21                                                 
+                                                                                
+       333 Mumbai                                                     2000      
+        30      12621 12-DEC-21                                                 
+                                                                                
+       111 Delhi                                                       230      
+        20      12210 15-DEC-21                                                 
+                                                                                
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       333 Mumbai                                                     1300      
+                12210 15-DEC-21                                                 
+                                                                                
+       111 Delhi                                                      2145      
+                12711 20-DEC-21                                                 
+                                                                                
+       111 Delhi                                                      1845      
+                12711 24-DEC-21                                                 
+                                                                                
+
+STATION_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+ STOP_TIME   TRAIN_NO ARRIVAL_D                                                 
+---------- ---------- ---------                                                 
+       111 Delhi                                                      1515      
+                12711 29-DEC-21                                                 
+                                                                                
+       111 Delhi                                                      1205      
+                12711 04-JAN-22                                                 
+                                                                                
+
+17 rows selected.
+
+SQL> select * from train
+  2  ;
+
+  TRAIN_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+DEPARTURE_TIME TRAIN_DAT S ARRIVAL         DESTINATION                          
+-------------- --------- - --------------- ---------------                      
+     12711 Rajdhani Express                                           1130      
+          1133 11-DEC-21 A Delhi           Chennai                              
+                                                                                
+     12704 Shatabdi Express                                           2130      
+          2135 13-DEC-21 A Mysore          Chennai                              
+                                                                                
+     12390 Dadar Express                                               730      
+           734 12-DEC-21 A Mumbai          Ahmedabad                            
+                                                                                
+
+  TRAIN_NO NAME                                               ARRIVAL_TIME      
+---------- -------------------------------------------------- ------------      
+DEPARTURE_TIME TRAIN_DAT S ARRIVAL         DESTINATION                          
+-------------- --------- - --------------- ---------------                      
+     12621 Chennai Express                                             905      
+           910 12-DEC-21 A Chennai         Mumbai                               
+                                                                                
+     12210 Navjeevan Express                                          1830      
+          1835 14-DEC-21 A Ahmedabad                                            
+                                                                                
+
+SQL> select * from train_status;
+
+  TRAIN_NO    SEATS1A    SEATS2A    SEATS3A    SEATSSL    SEATSCC               
+---------- ---------- ---------- ---------- ---------- ----------               
+     12711         20         30         25         75        125               
+     12704         25         25         30         50         25               
+     12390         20         30         25         50         40               
+     12621         30         30         30         60         30               
+     12210         25         25         30         60         25               
+
+SQL> select * from fares;
+
+  TRAIN_NO     FARE1A     FARE2A     FARE3A     FARESL     FARECC               
+---------- ---------- ---------- ---------- ---------- ----------               
+     12711        200        450        500        750       1250               
+     12704        150        375        480        660       1000               
+     12390        300        400        450        700       1200               
+     12621        300        350        600        700       1000               
+     12210        230        370        425        600        900               
+
+SQL> spool off;
