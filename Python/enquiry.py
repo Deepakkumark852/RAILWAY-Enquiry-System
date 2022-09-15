@@ -4,7 +4,7 @@ import tkinter
 import cx_Oracle
 
 def connnect():
-    connection = cx_Oracle.connect('system/1707@localhost:1521/orcl')
+    connection = cx_Oracle.connect('username/password@localhost:portno/orcl')
     cursor = connection.cursor()
     return connection , cursor
 
